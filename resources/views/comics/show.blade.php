@@ -7,4 +7,9 @@
 <p>{{ $selected_comic['type'] }}</p>
 
 <a href="{{ route('comics.edit', ['comic' => $selected_comic->id]) }}">Change</a>
-<button>Delete</button>
+
+<form action="{{ route('comics.destroy', ['comic' => $selected_comic->id]) }}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button>Delete</button>
+</form>
