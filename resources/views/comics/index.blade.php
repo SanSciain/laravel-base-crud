@@ -4,12 +4,13 @@
     @foreach ($comics_list as $item)
         <li>
             <h3>{{ $item['title'] }}</h3>
-            <p>{{ $item['description'] }}</p>
+            {{-- <p>{{ $item['description'] }}</p>
             <img src="{{ $item['thumb'] }}" alt="">
             <p>{{ $item['price'] }}</p>
             <p>{{ $item['series'] }}</p>
             <p>{{ $item['sale_date'] }}</p>
-            <p>{{ $item['type'] }}</p>
+            <p>{{ $item['type'] }}</p> --}}
+            <a href="{{ route('comics.show', ['comic' => $item->id]) }}">more details</a>
         </li>
     @endforeach
 </ul>
